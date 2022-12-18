@@ -46,6 +46,7 @@ function grab() {
   }
 }
 
+const { year, month, day, hour, minute, second } = config;
 const timestamp = new Date(
   year,
   month - 1,
@@ -60,7 +61,7 @@ const timer = setInterval(() => {
   const now = new Date().getTime();
   if (now >= timestamp) {
     grab();
-    clearInterval(timestamp);
+    clearInterval(timer);
   }
 }, 30);
 ```
